@@ -62,3 +62,12 @@ h1 {
   font-size: 30px;
   cursor: pointer;
 }
+
+.final-score {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.final-score.toggle {
+  display: none;
+}

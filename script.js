@@ -9,6 +9,7 @@ const scoreBlock = document.querySelector(".score");
 const overlay = document.querySelector(".overlay");
 const startEndBtn = document.querySelector(".overlay a");
 const startEndTitle = document.querySelector(".start-game");
+const finalScore = document.querySelector(".final-score");
 
 // snake head
 let snakeX = 10 * boxSize;
@@ -67,7 +68,6 @@ function update() {
     snakeBody.push([foodX, foodY]);
     score++;
     scoreBlock.textContent = `Score: ${score}`;
-    console.log(scoreBlock);
     placeFood();
   }
 
@@ -97,6 +97,8 @@ function update() {
     gameOver = true;
     startEndTitle.textContent = "Game Over, you are looser!!!";
     startEndBtn.textContent = "Restart";
+    finalScore.textContent = `Your final score: ${score}`;
+    finalScore.classList.remove("toggle");
     overlay.classList.remove("toggle");
   }
 
@@ -105,6 +107,8 @@ function update() {
       gameOver = true;
       startEndTitle.textContent = "Game Over, you are looser!!!";
       startEndBtn.textContent = "Restart";
+      finalScore.textContent = `Your final score: ${score}`;
+      finalScore.classList.remove("toggle");
       overlay.classList.remove("toggle");
     }
   }

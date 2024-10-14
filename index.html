@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Snake game</title>
   </head>
   <body>
@@ -16,6 +23,20 @@
           <a href="#">Start</a>
         </div>
         <canvas id="gBoard"></canvas>
+        <div class="controls">
+          <div data-key="ArrowLeft" class="controls-btn">
+            <i class="fa-solid fa-left-long"></i>
+          </div>
+          <div data-key="ArrowUp" class="controls-btn">
+            <i class="fa-solid fa-up-long"></i>
+          </div>
+          <div data-key="ArrowRight" class="controls-btn">
+            <i class="fa-solid fa-right-long"></i>
+          </div>
+          <div data-key="ArrowDown" class="controls-btn">
+            <i class="fa-solid fa-down-long"></i>
+          </div>
+        </div>
       </div>
       <h2 class="score">Score: 0</h2>
     </div>

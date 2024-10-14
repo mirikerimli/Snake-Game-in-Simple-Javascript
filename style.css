@@ -71,3 +71,28 @@ h1 {
 .final-score.toggle {
   display: none;
 }
+
+.controls {
+  display: flex;
+  justify-content: space-around;
+  background: hsla(0, 0%, 0%, 0.816);
+  gap: 20px;
+  color: #ffffffc2;
+}
+
+.controls-btn {
+  flex: 1;
+  text-align: center;
+  background: #00000081;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+.controls-btn:hover {
+  background: #000000b3;
+}
+
+.controls-btn i {
+  padding: 14px;
+  font-size: 30px;
+}

@@ -1,8 +1,8 @@
 const board = document.querySelector("#gBoard");
 const ctx = board.getContext("2d");
-const boxSize = 25;
-const cols = 20;
-const rows = 20;
+const boxSize = 20;
+const cols = 18;
+const rows = 18;
 board.width = cols * boxSize;
 board.height = rows * boxSize;
 const scoreBlock = document.querySelector(".score");
@@ -10,6 +10,7 @@ const overlay = document.querySelector(".overlay");
 const startEndBtn = document.querySelector(".overlay a");
 const startEndTitle = document.querySelector(".start-game");
 const finalScore = document.querySelector(".final-score");
+const controls = document.querySelectorAll(".controls .controls-btn");
 
 // snake head
 let snakeX = 10 * boxSize;
@@ -37,6 +38,7 @@ startEndBtn.addEventListener("click", function () {
   if (gameOver) {
     overlay.classList.add("toggle");
     score = 0;
+    scoreBlock.textContent = `Score: ${score}`;
     velocityX = 0;
     velocityY = 0;
     snakeX = 10 * boxSize;
@@ -119,18 +121,22 @@ function placeFood() {
   foodY = Math.floor(Math.random() * 20) * boxSize;
 }
 
+controls.forEach((code) => {
+  code.addEventListener("click", () => startGame({ code: code.dataset.key }));
+});
+
 function startGame(event) {
-  if (event.code == "ArrowUp" && velocityY != 25) {
+  if (event.code == "ArrowUp" && velocityY != 20) {
     velocityX = 0;
-    velocityY = -25;
-  } else if (event.code == "ArrowDown" && velocityY != -25) {
+    velocityY = -20;
+  } else if (event.code == "ArrowDown" && velocityY != -20) {
     velocityX = 0;
-    velocityY = 25;
-  } else if (event.code == "ArrowLeft" && velocityX != 25) {
-    velocityX = -25;
+    velocityY = 20;
+  } else if (event.code == "ArrowLeft" && velocityX != 20) {
+    velocityX = -20;
     velocityY = 0;
-  } else if (event.code == "ArrowRight" && velocityX != -25) {
-    velocityX = 25;
+  } else if (event.code == "ArrowRight" && velocityX != -20) {
+    velocityX = 20;
     velocityY = 0;
   }
 }

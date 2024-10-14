@@ -1,6 +1,6 @@
 const board = document.querySelector("#gBoard");
 const ctx = board.getContext("2d");
-const boxSize = 20;
+const boxSize = 18;
 const cols = 18;
 const rows = 18;
 board.width = cols * boxSize;
@@ -117,8 +117,8 @@ function update() {
 }
 
 function placeFood() {
-  foodX = Math.floor(Math.random() * 20) * boxSize;
-  foodY = Math.floor(Math.random() * 20) * boxSize;
+  foodX = Math.floor(Math.random() * 18) * boxSize;
+  foodY = Math.floor(Math.random() * 18) * boxSize;
 }
 
 controls.forEach((code) => {
@@ -126,17 +126,17 @@ controls.forEach((code) => {
 });
 
 function startGame(event) {
-  if (event.code == "ArrowUp" && velocityY != 20) {
+  if (event.code == "ArrowUp" && velocityY != 18) {
     velocityX = 0;
-    velocityY = -20;
-  } else if (event.code == "ArrowDown" && velocityY != -20) {
+    velocityY = -18;
+  } else if (event.code == "ArrowDown" && velocityY != -18) {
     velocityX = 0;
-    velocityY = 20;
-  } else if (event.code == "ArrowLeft" && velocityX != 20) {
-    velocityX = -20;
+    velocityY = 18;
+  } else if (event.code == "ArrowLeft" && velocityX != 18) {
+    velocityX = -18;
     velocityY = 0;
-  } else if (event.code == "ArrowRight" && velocityX != -20) {
-    velocityX = 20;
+  } else if (event.code == "ArrowRight" && velocityX != -18) {
+    velocityX = 18;
     velocityY = 0;
   }
 }
